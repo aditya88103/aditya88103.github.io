@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Raj | Data Analyst & AI / ML Engineer</title>
+    <meta name="description" content="Portfolio of Aditya Raj - Data Analyst & AI Enthusiast skilled in Python, SQL, Power BI, Machine Learning, and LLMs. Explore 15+ projects, 3 internships, and 25+ industry certifications.">
+    <link rel="icon" type="image/jpeg" href="images/profile-photo.jpg">
+    <link rel="canonical" href="https://adityasriwastava.me/">
+
+    <!-- Open Graph / Meta for Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adityasriwastava.me/">
+    <meta property="og:title" content="Aditya Raj | Data Analyst & AI / ML Engineer">
+    <meta property="og:description" content="Portfolio of Aditya Raj - Data Analyst & AI Enthusiast skilled in Python, SQL, Power BI, Machine Learning, and LLMs.">
+    <meta property="og:image" content="https://adityasriwastava.me/images/profile-photo.jpg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://adityasriwastava.me/">
+    <meta name="twitter:title" content="Aditya Raj | Data Analyst & AI / ML Engineer">
+    <meta name="twitter:description" content="Portfolio of Aditya Raj - Data Analyst & AI Enthusiast skilled in Python, SQL, Power BI, Machine Learning, and LLMs.">
+    <meta name="twitter:image" content="https://adityasriwastava.me/images/profile-photo.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-theme">
+
+    <!-- Custom Cursor Glow -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- Background Particle Constellation Canvas -->
+    <canvas id="constellation-canvas"></canvas>
+
+    <!-- Ambient Gradient Blobs -->
+    <div class="ambient-glows" aria-hidden="true">
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        <div class="glow-orb glow-orb-3"></div>
+    </div>
+
+    <!-- Sticky Glass Navigation -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-symbol">&lt;AR/&gt;</span>
+                <span class="logo-name">Aditya <span class="accent-text">Raj</span></span>
+            </a>
+
+            <!-- Desktop Links -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link"><i class="fas fa-user-circle"></i> About</a></li>
+                <li><a href="#skills" class="nav-link"><i class="fas fa-microchip"></i> Skills</a></li>
+                <li><a href="#projects" class="nav-link"><i class="fas fa-layer-group"></i> Projects</a></li>
+                <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#certifications" class="nav-link"><i class="fas fa-award"></i> Certifications</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i> Contact</a></li>
+            </ul>
+
+            <!-- Navigation Controls -->
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light theme" title="Toggle Theme">
+                    <i class="fas fa-moon theme-icon"></i>
+                </button>
+                <button onclick="openModal('resume-modal')" class="btn-sm btn-outline resume-cta">
+                    <span>Resume</span> <i class="fas fa-arrow-down"></i>
+                </button>
+                <button id="mobile-toggle" class="mobile-toggle" aria-label="Open Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="mobile-drawer-content">
+            <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+            <div class="drawer-logo">
+                <span>&lt;AR/&gt;</span> Aditya Raj
+            </div>
+            <ul class="drawer-links">
+                <li><a href="#about" class="drawer-link"><i class="fas fa-user-circle"></i> About</a></li>
+                <li><a href="#skills" class="drawer-link"><i class="fas fa-microchip"></i> Skills</a></li>
+                <li><a href="#projects" class="drawer-link"><i class="fas fa-layer-group"></i> Projects</a></li>
+                <li><a href="#experience" class="drawer-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#certifications" class="drawer-link"><i class="fas fa-award"></i> Certifications</a></li>
+                <li><a href="#contact" class="drawer-link"><i class="fas fa-paper-plane"></i> Contact</a></li>
+            </ul>
+            <div class="drawer-actions">
+                <button onclick="openModal('resume-modal'); toggleMobileMenu();" class="btn-primary w-full">
+                    <i class="fas fa-file-pdf"></i> Download Resume
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-grid">
+                <!-- Text Content -->
+                <div class="hero-content">
+                    <div class="status-pill animate-fade-in">
+                        <span class="status-indicator-dot"></span>
+                        <span class="status-text">Available for Full-time Roles & Internships</span>
+                    </div>
+
+                    <h1 class="hero-title animate-fade-in delay-1">
+                        Hi, I'm <span class="gradient-text">Aditya Raj</span>
+                    </h1>
+
+                    <div class="hero-role-wrapper animate-fade-in delay-2">
+                        <span class="role-terminal-icon">&gt;</span>
+                        <span class="typed-role" id="role-text">Data Analyst</span>
+                        <span class="typing-cursor">|</span>
+                    </div>
+
+                    <p class="hero-bio animate-fade-in delay-3">
+                        Transforming complex datasets into high-impact business decisions and engineering intelligent machine learning & LLM systems. Experienced in <strong>Python, SQL, Power BI, Scikit-learn & GenAI</strong> with hands-on internship experience at <strong>EduSkills, Altair, and Google for Developers</strong>.
+                    </p>
+
+                    <div class="hero-cta-group animate-fade-in delay-4">
+                        <a href="#projects" class="btn-primary">
+                            <i class="fas fa-rocket"></i> Explore Projects
+                        </a>
+                        <a href="#contact" class="btn-secondary">
+                            <i class="fas fa-envelope"></i> Get In Touch
+                        </a>
+                        <a href="https://wa.me/918810328594?text=Hello%20Aditya,%20I%20would%20like%20to%20connect%20with%20you." target="_blank" class="btn-whatsapp" title="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- Quick Highlights Counter -->
+                    <div class="hero-metrics animate-fade-in delay-5">
+                        <div class="metric-card">
+                            <span class="metric-number">15+</span>
+                            <span class="metric-label">Projects Built</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-number">25+</span>
+                            <span class="metric-label">Certifications</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-number">3</span>
+                            <span class="metric-label">Internships</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-number">30+</span>
+                            <span class="metric-label">GitHub Repos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Hero Visual / Avatar -->
+                <div class="hero-visual animate-fade-in delay-2">
+                    <div class="avatar-stage">
+                        <div class="avatar-glow-ring"></div>
+                        <div class="avatar-ring-dashed"></div>
+
+                        <!-- Orbital Floating Tech Badges -->
+                        <div class="orbit-badge badge-python" title="Python">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="orbit-badge badge-sql" title="SQL">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="orbit-badge badge-powerbi" title="Power BI">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="orbit-badge badge-ai" title="AI & Machine Learning">
+                            <i class="fas fa-brain"></i>
+                        </div>
+
+                        <div class="avatar-frame">
+                            <img src="images/profile-photo.jpg" alt="Aditya Raj" class="avatar-image">
+                            <div class="avatar-overlay-gradient"></div>
+                        </div>
+
+                        <div class="avatar-tag glass-card">
+                            <i class="fas fa-shield-halved accent-text"></i>
+                            <div>
+                                <span class="tag-title">Aditya Sriwastava</span>
+                                <span class="tag-sub">Data & AI Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continuous Tech Banner Marquee -->
+            <div class="tech-marquee-wrapper" aria-hidden="true">
+                <div class="tech-marquee-track">
+                    <div class="marquee-group">
+                        <span class="marquee-item"><i class="fab fa-python"></i> Python</span>
+                        <span class="marquee-item"><i class="fas fa-database"></i> PostgreSQL & SQL</span>
+                        <span class="marquee-item"><i class="fas fa-chart-line"></i> Power BI</span>
+                        <span class="marquee-item"><i class="fas fa-brain"></i> Machine Learning</span>
+                        <span class="marquee-item"><i class="fas fa-robot"></i> Generative AI & LLMs</span>
+                        <span class="marquee-item"><i class="fas fa-chart-area"></i> Tableau</span>
+                        <span class="marquee-item"><i class="fas fa-file-excel"></i> Advanced Excel</span>
+                        <span class="marquee-item"><i class="fas fa-network-wired"></i> Scikit-Learn</span>
+                        <span class="marquee-item"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="marquee-item"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+                    </div>
+                    <div class="marquee-group">
+                        <span class="marquee-item"><i class="fab fa-python"></i> Python</span>
+                        <span class="marquee-item"><i class="fas fa-database"></i> PostgreSQL & SQL</span>
+                        <span class="marquee-item"><i class="fas fa-chart-line"></i> Power BI</span>
+                        <span class="marquee-item"><i class="fas fa-brain"></i> Machine Learning</span>
+                        <span class="marquee-item"><i class="fas fa-robot"></i> Generative AI & LLMs</span>
+                        <span class="marquee-item"><i class="fas fa-chart-area"></i> Tableau</span>
+                        <span class="marquee-item"><i class="fas fa-file-excel"></i> Advanced Excel</span>
+                        <span class="marquee-item"><i class="fas fa-network-wired"></i> Scikit-Learn</span>
+                        <span class="marquee-item"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="marquee-item"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Education Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge"><i class="fas fa-user"></i> Background</span>
+                    <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                    <p class="section-description">
+                        Blending analytical rigor, algorithms, and business instincts to drive innovation.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Bio Glass Card -->
+                    <div class="about-card glass-card">
+                        <div class="about-header">
+                            <div class="about-icon-box"><i class="fas fa-chart-simple"></i></div>
+                            <div>
+                                <h3>Data Analyst & AI Engineer</h3>
+                                <p class="accent-text">B.Tech in Computer Science & Engineering (2023 - 2027)</p>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <p>
+                                I am an enthusiastic and results-oriented professional specializing in <strong>Data Analytics, Machine Learning, and Generative AI</strong>. My core expertise spans <strong>Power BI, SQL, Python (Pandas, NumPy, Scikit-learn), Tableau, and Excel</strong>, crafting end-to-end data pipelines and interactive executive dashboards.
+                            </p>
+                            <p>
+                                Currently pursuing my <strong>B.Tech in CSE at Invertis University</strong>, I have successfully executed three intensive virtual & on-site internships with <strong>EduSkills Academy, Altair, and Google for Developers</strong>. I focus on actionable intelligence: extracting signals from noise, optimizing models, and communicating insights to decision-makers.
+                            </p>
+                            <p>
+                                From building high-throughput LLM inference engines (<strong>NexusLLM</strong>) to mobile health scanners (<strong>NutriScan</strong>) and multi-million dollar retail analytics dashboards, I love pushing the boundaries of data and code.
+                            </p>
+                        </div>
+                        <div class="social-quick-strip">
+                            <a href="https://github.com/aditya88103" target="_blank" class="social-pill" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://www.linkedin.com/in/aditya-raj-767822271/" target="_blank" class="social-pill" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="mailto:aditya8810328@gmail.com" class="social-pill" title="Email"><i class="fas fa-envelope"></i> Email</a>
+                            <a href="https://leetcode.com/u/aditya88103/" target="_blank" class="social-pill" title="LeetCode"><i class="fas fa-code"></i> LeetCode</a>
+                        </div>
+                    </div>
+
+                    <!-- Education Timeline Card -->
+                    <div class="education-card glass-card">
+                        <div class="about-header">
+                            <div class="about-icon-box"><i class="fas fa-graduation-cap"></i></div>
+                            <div>
+                                <h3>Education & Academics</h3>
+                                <p class="accent-text">Academic Foundations</p>
+                            </div>
+                        </div>
+
+                        <div class="edu-timeline">
+                            <div class="edu-item">
+                                <div class="edu-dot"></div>
+                                <div class="edu-content">
+                                    <span class="edu-badge">2023 – 2027</span>
+                                    <h4>Bachelor of Technology (B.Tech)</h4>
+                                    <p class="edu-school">Invertis University</p>
+                                    <p class="edu-meta">Computer Science & Engineering • Data Science & Analytics focus</p>
+                                </div>
+                            </div>
+
+                            <div class="edu-item">
+                                <div class="edu-dot"></div>
+                                <div class="edu-content">
+                                    <span class="edu-badge">2021 – 2023</span>
+                                    <h4>Intermediate (Class 12th Science)</h4>
+                                    <p class="edu-school">K.T College, Motihari</p>
+                                    <p class="edu-meta">Physics, Chemistry, Mathematics (PCM)</p>
+                                </div>
+                            </div>
+
+                            <div class="edu-item">
+                                <div class="edu-dot"></div>
+                                <div class="edu-content">
+                                    <span class="edu-badge">2019 – 2021</span>
+                                    <h4>Secondary School Examination (10th)</h4>
+                                    <p class="edu-school">S P S Balhn More, Areraj</p>
+                                    <p class="edu-meta">Core Academic Curriculum</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Arsenal / Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge"><i class="fas fa-microchip"></i> Capabilities</span>
+                    <h2 class="section-title">Technical <span class="gradient-text">Arsenal</span></h2>
+                    <p class="section-description">
+                        Comprehensive toolstack covering modern data pipelines, AI modeling, and full-stack integration.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Domain 1: Data Analytics & BI -->
+                    <div class="skill-category-card glass-card">
+                        <div class="category-header">
+                            <div class="cat-icon cat-cyan"><i class="fas fa-chart-pie"></i></div>
+                            <h3>Data Analytics & BI</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-chart-simple"></i> Power BI</span>
+                                <span class="skill-pct">95%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-database"></i> SQL / PostgreSQL</span>
+                                <span class="skill-pct">90%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-file-excel"></i> Advanced Excel (DAX, Pivot)</span>
+                                <span class="skill-pct">92%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-chart-area"></i> Tableau</span>
+                                <span class="skill-pct">82%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-filter"></i> Power Query & ETL</span>
+                                <span class="skill-pct">90%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-magnifying-glass-chart"></i> EDA & KPI Dashboards</span>
+                                <span class="skill-pct">95%</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Domain 2: AI & Machine Learning -->
+                    <div class="skill-category-card glass-card">
+                        <div class="category-header">
+                            <div class="cat-icon cat-indigo"><i class="fas fa-brain"></i></div>
+                            <h3>AI & Machine Learning</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-robot"></i> LLMs & Agentic AI</span>
+                                <span class="skill-pct">88%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-brain"></i> Scikit-learn (Supervised/Clustering)</span>
+                                <span class="skill-pct">85%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-wand-magic-sparkles"></i> Prompt Engineering & GenAI</span>
+                                <span class="skill-pct">90%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-chart-line"></i> Predictive Modeling & Forecasting</span>
+                                <span class="skill-pct">84%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-diagram-project"></i> Feature Engineering & Evaluation</span>
+                                <span class="skill-pct">88%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-shield-heart"></i> AI Ethics & Governance</span>
+                                <span class="skill-pct">92%</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Domain 3: Python Data Science Ecosystem -->
+                    <div class="skill-category-card glass-card">
+                        <div class="category-header">
+                            <div class="cat-icon cat-purple"><i class="fab fa-python"></i></div>
+                            <h3>Python & Data Science</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fab fa-python"></i> Python Core (OOP, Async)</span>
+                                <span class="skill-pct">92%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-cube"></i> Pandas & NumPy</span>
+                                <span class="skill-pct">94%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-palette"></i> Matplotlib & Seaborn</span>
+                                <span class="skill-pct">90%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-server"></i> Flask & REST APIs</span>
+                                <span class="skill-pct">82%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-code-branch"></i> Automated Scripting & SMTP</span>
+                                <span class="skill-pct">90%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-table-cells"></i> R Programming & Wrangling</span>
+                                <span class="skill-pct">78%</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Domain 4: Engineering & Tools -->
+                    <div class="skill-category-card glass-card">
+                        <div class="category-header">
+                            <div class="cat-icon cat-green"><i class="fas fa-screwdriver-wrench"></i></div>
+                            <h3>Engineering & Tools</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fab fa-git-alt"></i> Git & GitHub Workflow</span>
+                                <span class="skill-pct">90%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-book-open"></i> Jupyter & Google Colab</span>
+                                <span class="skill-pct">95%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fab fa-html5"></i> Modern HTML5 / CSS3 / JS</span>
+                                <span class="skill-pct">85%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-cloud"></i> Google Cloud / API Integrations</span>
+                                <span class="skill-pct">80%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-network-wired"></i> Distributed Inference Concepts</span>
+                                <span class="skill-pct">82%</span>
+                            </li>
+                            <li class="skill-chip">
+                                <span class="skill-name"><i class="fas fa-laptop-code"></i> VS Code & Shell Scripting</span>
+                                <span class="skill-pct">88%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge"><i class="fas fa-folder-open"></i> Portfolio</span>
+                    <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                    <p class="section-description">
+                        Explore my work across distributed LLM systems, enterprise Power BI dashboards, machine learning pipelines, and interactive web tools.
+                    </p>
+                </div>
+
+                <!-- Projects Filter Controls -->
+                <div class="filter-wrapper">
+                    <button class="filter-tab active" data-filter="all">All Projects (<span id="count-all">0</span>)</button>
+                    <button class="filter-tab" data-filter="ai-ml"><i class="fas fa-robot"></i> AI & ML (<span id="count-ai">0</span>)</button>
+                    <button class="filter-tab" data-filter="bi-analytics"><i class="fas fa-chart-line"></i> BI & Analytics (<span id="count-bi">0</span>)</button>
+                    <button class="filter-tab" data-filter="python"><i class="fab fa-python"></i> Python & SQL (<span id="count-python">0</span>)</button>
+                    <button class="filter-tab" data-filter="web-apps"><i class="fas fa-globe"></i> Web & Apps (<span id="count-web">0</span>)</button>
+                </div>
+
+                <!-- Projects Dynamic Grid -->
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Injected dynamically via main.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge"><i class="fas fa-briefcase"></i> Journey</span>
+                    <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+                    <p class="section-description">
+                        Hands-on industry experience delivering real-world machine learning, data science, and AI solutions.
+                    </p>
+                </div>
+
+                <div class="experience-timeline">
+                    <!-- Exp 1: EduSkills Academy -->
+                    <div class="exp-card glass-card">
+                        <div class="exp-badge-indicator"><i class="fas fa-brain"></i></div>
+                        <div class="exp-main">
+                            <div class="exp-header">
+                                <div>
+                                    <span class="exp-period"><i class="fas fa-calendar-alt"></i> Jan 2026 – Mar 2026 • 3 mos</span>
+                                    <h3 class="exp-role">Machine Learning & Data Science Intern</h3>
+                                    <h4 class="exp-company"><i class="fas fa-building"></i> EduSkills Academy <span class="badge-mode">Remote</span></h4>
+                                </div>
+                                <div class="exp-org-icon"><i class="fas fa-graduation-cap"></i></div>
+                            </div>
+                            <p class="exp-desc">
+                                Successfully completed a 10-week rigorous Machine Learning & Data Science internship focused on real-world data-driven problem solving, predictive analytics, and production deployment workflows.
+                            </p>
+                            <ul class="exp-bullets">
+                                <li><strong>Data Preprocessing & Analysis:</strong> Leveraged Python (NumPy, Pandas) for thorough data cleaning, handling missing values, and high-dimensional transformation.</li>
+                                <li><strong>Statistical Visualization:</strong> Engineered detailed exploratory charts with Matplotlib & Seaborn to uncover underlying customer and process patterns.</li>
+                                <li><strong>ML Modeling:</strong> Implemented and tuned supervised learning and clustering models with Scikit-learn, performing rigorous feature selection and hyperparameter optimization.</li>
+                                <li><strong>SQL & Flask Deployment:</strong> Integrated complex SQL queries for relational data retrieval and built RESTful Flask endpoints for live model inference.</li>
+                            </ul>
+                            <div class="exp-tech-tags">
+                                <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                                <span class="tech-tag"><i class="fas fa-brain"></i> Scikit-Learn</span>
+                                <span class="tech-tag"><i class="fas fa-database"></i> SQL</span>
+                                <span class="tech-tag"><i class="fas fa-server"></i> Flask</span>
+                                <span class="tech-tag"><i class="fas fa-chart-simple"></i> EDA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exp 2: Altair -->
+                    <div class="exp-card glass-card">
+                        <div class="exp-badge-indicator"><i class="fas fa-network-wired"></i></div>
+                        <div class="exp-main">
+                            <div class="exp-header">
+                                <div>
+                                    <span class="exp-period"><i class="fas fa-calendar-alt"></i> Oct 2025 – Dec 2025 • 3 mos</span>
+                                    <h3 class="exp-role">Data Science Intern</h3>
+                                    <h4 class="exp-company"><i class="fas fa-building"></i> Altair (AICTE–EduSkills) <span class="badge-mode">Remote</span></h4>
+                                </div>
+                                <div class="exp-org-icon"><i class="fas fa-laptop-code"></i></div>
+                            </div>
+                            <p class="exp-desc">
+                                Completed a 10-week Data Science Master Virtual Internship under the AICTE–EduSkills initiative supported by Altair, mastering practical industry-level data science and engineering workflows.
+                            </p>
+                            <ul class="exp-bullets">
+                                <li><strong>Industry Datasets:</strong> Worked hands-on with enterprise multivariate datasets using Python and automated cleaning routines.</li>
+                                <li><strong>Exploratory Data Analysis:</strong> Uncovered hidden correlations, anomalies, and seasonal variance using statistical diagnostics.</li>
+                                <li><strong>Model Evaluation:</strong> Evaluated ML performance using cross-validation, confusion matrices, ROC-AUC, and precision-recall trade-offs.</li>
+                                <li><strong>Insight Communication:</strong> Formulated structured executive reports translating mathematical predictions into actionable strategies.</li>
+                            </ul>
+                            <div class="exp-tech-tags">
+                                <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                                <span class="tech-tag"><i class="fas fa-chart-line"></i> EDA</span>
+                                <span class="tech-tag"><i class="fas fa-microchip"></i> Machine Learning</span>
+                                <span class="tech-tag"><i class="fas fa-chart-pie"></i> Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exp 3: Google for Developers -->
+                    <div class="exp-card glass-card">
+                        <div class="exp-badge-indicator"><i class="fab fa-google"></i></div>
+                        <div class="exp-main">
+                            <div class="exp-header">
+                                <div>
+                                    <span class="exp-period"><i class="fas fa-calendar-alt"></i> Apr 2025 – Jun 2025 • 3 mos</span>
+                                    <h3 class="exp-role">AI-ML Intern</h3>
+                                    <h4 class="exp-company"><i class="fab fa-google"></i> Google for Developers <span class="badge-mode badge-onsite">India • On-site</span></h4>
+                                </div>
+                                <div class="exp-org-icon"><i class="fab fa-google"></i></div>
+                            </div>
+                            <p class="exp-desc">
+                                Selected for a 10-week intensive AI/ML internship with Google for Developers, working collaboratively on real-world artificial intelligence models and developer tool optimizations.
+                            </p>
+                            <ul class="exp-bullets">
+                                <li><strong>Collaborative ML Research:</strong> Collaborated across cross-functional engineering teams to evaluate and enhance machine learning pipelines.</li>
+                                <li><strong>Algorithm Optimization:</strong> Analyzed dataset bottlenecks and accelerated compute performance in developer-facing utilities.</li>
+                                <li><strong>Real-world Problem Solving:</strong> Applied state-of-the-art AI/ML techniques to boost user engagement and operational efficiency.</li>
+                            </ul>
+                            <div class="exp-tech-tags">
+                                <span class="tech-tag"><i class="fas fa-brain"></i> Artificial Intelligence</span>
+                                <span class="tech-tag"><i class="fas fa-robot"></i> Machine Learning</span>
+                                <span class="tech-tag"><i class="fas fa-gears"></i> Algorithm Optimization</span>
+                                <span class="tech-tag"><i class="fab fa-google"></i> Developer Tools</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Licenses & Certifications Section with Click-to-View Modal -->
+        <section id="certifications" class="section certifications-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge"><i class="fas fa-certificate"></i> Credentials</span>
+                    <h2 class="section-title">Licenses & <span class="gradient-text">Certifications</span></h2>
+                    <p class="section-description">
+                        Verified credentials from world-renowned organizations including <strong>ISRO, Meta, Google, Microsoft, Deloitte, Tata, Walmart & LinkedIn</strong>. Click on any certificate to view details, verify credentials, or copy certificate IDs.
+                    </p>
+                </div>
+
+                <!-- Search & Filters Container -->
+                <div class="cert-controls glass-card">
+                    <div class="cert-search-box">
+                        <i class="fas fa-search cert-search-icon"></i>
+                        <input type="text" id="cert-search-input" placeholder="Search by name, organization (e.g. Google, ISRO, Meta, SQL, Power BI)..." aria-label="Search certifications">
+                        <button id="cert-search-clear" class="cert-clear-btn" aria-label="Clear search">&times;</button>
+                    </div>
+
+                    <div class="cert-filter-pills" id="cert-filters">
+                        <button class="cert-pill active" data-filter="all">All (<span id="cert-count-all">0</span>)</button>
+                        <button class="cert-pill" data-filter="ai">AI & GenAI (<span id="cert-count-ai">0</span>)</button>
+                        <button class="cert-pill" data-filter="data-analytics">Data Analytics (<span id="cert-count-data">0</span>)</button>
+                        <button class="cert-pill" data-filter="business-intel">Power BI & Tableau (<span id="cert-count-bi">0</span>)</button>
+                        <button class="cert-pill" data-filter="python-sql">Python & SQL (<span id="cert-count-pysql">0</span>)</button>
+                    </div>
+                </div>
+
+                <!-- Certifications Grid -->
+                <div class="cert-grid" id="cert-grid">
+                    <!-- Populated dynamically via main.js with Click-to-View functionality -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge"><i class="fas fa-paper-plane"></i> Get In Touch</span>
+                    <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+                    <p class="section-description">
+                        Have a project in mind, an opportunity, or want to talk data & AI? Drop a message!
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Left: Contact Details & Social Links -->
+                    <div class="contact-info-card glass-card">
+                        <h3>Connect With Me</h3>
+                        <p class="contact-intro">
+                            I am actively seeking roles and collaborations in Data Analytics, Business Intelligence, and AI/ML Engineering. Feel free to reach out directly through any channel!
+                        </p>
+
+                        <div class="contact-methods">
+                            <a href="mailto:aditya8810328@gmail.com" class="method-item">
+                                <div class="method-icon icon-email"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <span class="method-label">Email</span>
+                                    <span class="method-val">aditya8810328@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/918810328594?text=Hello%20Aditya,%20I%20would%20like%20to%20connect%20with%20you." target="_blank" class="method-item">
+                                <div class="method-icon icon-whatsapp"><i class="fab fa-whatsapp"></i></div>
+                                <div>
+                                    <span class="method-label">WhatsApp</span>
+                                    <span class="method-val">+91 88103 28594</span>
+                                </div>
+                            </a>
+
+                            <div class="method-item">
+                                <div class="method-icon icon-location"><i class="fas fa-location-dot"></i></div>
+                                <div>
+                                    <span class="method-label">Location</span>
+                                    <span class="method-val">India (Open to Remote / On-site)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Full Socials Hub -->
+                        <div class="social-hub">
+                            <h4 class="social-hub-title">Find Me Online</h4>
+                            <div class="social-links-grid">
+                                <a href="https://github.com/aditya88103" target="_blank" class="social-box" title="GitHub" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/aditya-raj-767822271/" target="_blank" class="social-box" title="LinkedIn" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://leetcode.com/u/aditya88103/" target="_blank" class="social-box" title="LeetCode" aria-label="LeetCode">
+                                    <i class="fas fa-code"></i>
+                                    <span>LeetCode</span>
+                                </a>
+                                <a href="https://www.instagram.com/aditya_sriwastava/" target="_blank" class="social-box" title="Instagram" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                                <a href="https://x.com/adityasriwast10?s=11" target="_blank" class="social-box" title="X / Twitter" aria-label="X (Twitter)">
+                                    <i class="fab fa-x-twitter"></i>
+                                    <span>Twitter/X</span>
+                                </a>
+                                <a href="https://www.facebook.com/aditya.shrivastava.9279" target="_blank" class="social-box" title="Facebook" aria-label="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Formspree Contact Form -->
+                    <div class="contact-form-card glass-card">
+                        <h3>Send a Message</h3>
+                        <p class="form-sub">Fill in your information and I will respond within 24 hours.</p>
+
+                        <form id="contact-form" action="https://formspree.io/f/mwvnopgd" method="POST" novalidate>
+                            <div class="form-group">
+                                <label for="form-name">Your Name</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="form-name" name="name" placeholder="John Doe" class="glass-input" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-email">Email Address</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="form-email" name="email" placeholder="john@example.com" class="glass-input" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-message">Your Message</label>
+                                <div class="input-with-icon textarea-icon">
+                                    <i class="fas fa-message"></i>
+                                    <textarea id="form-message" name="message" rows="5" placeholder="Let's discuss an opportunity or project..." class="glass-input" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group verification-group">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" id="human-verify-contact" required>
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">I confirm that I am a human visitor</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" id="contact-submit-btn" class="btn-primary w-full" disabled>
+                                <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+                            </button>
+
+                            <div id="form-status" class="form-status" role="alert"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="#hero" class="footer-logo">&lt;AR/&gt; Aditya Raj</a>
+                <p>Data Analyst • AI / ML Enthusiast • Problem Solver</p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2026 Aditya Raj. Designed & Built with Modern Engineering & Data Passion.</p>
+            </div>
+            <div class="footer-right">
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="scroll-top-btn" aria-label="Back to top" title="Back to top">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================== -->
+    <!-- MODALS SECTION                                 -->
+    <!-- ============================================== -->
+
+    <!-- Unified Interactive Project Details Modal -->
+    <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-dialog glass-card">
+            <button class="modal-close-btn" onclick="closeModal('project-modal')" aria-label="Close modal">&times;</button>
+            <div class="modal-header-banner" id="project-modal-banner">
+                <!-- Injected via JS -->
+            </div>
+            <div class="modal-body-content">
+                <div class="modal-meta-row">
+                    <span class="modal-category-badge" id="project-modal-category">Category</span>
+                    <span class="modal-date-badge" id="project-modal-date"><i class="fas fa-calendar-alt"></i> Date</span>
+                </div>
+                <h2 id="project-modal-title" class="modal-title">Project Title</h2>
+                <p id="project-modal-desc" class="modal-description">Project full description.</p>
+
+                <div class="modal-section-box">
+                    <h4><i class="fas fa-star accent-text"></i> Key Highlights & Features</h4>
+                    <ul id="project-modal-features" class="modal-features-list"></ul>
+                </div>
+
+                <div class="modal-section-box">
+                    <h4><i class="fas fa-screwdriver-wrench accent-text"></i> Tools & Technologies</h4>
+                    <div id="project-modal-tech" class="modal-tech-stack"></div>
+                </div>
+
+                <div class="modal-actions" id="project-modal-links">
+                    <!-- Links injected via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Certificate Credential Modal (Click to View) -->
+    <div id="cert-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-dialog cert-modal-dialog glass-card">
+            <button class="modal-close-btn" onclick="closeModal('cert-modal')" aria-label="Close modal">&times;</button>
+            <div class="cert-modal-header">
+                <div class="cert-modal-icon" id="cert-modal-org-icon"><i class="fas fa-award"></i></div>
+                <div>
+                    <span class="cert-modal-org" id="cert-modal-org">Issuing Organization</span>
+                    <h3 class="cert-modal-title" id="cert-modal-title">Certificate Title</h3>
+                </div>
+            </div>
+
+            <div class="cert-modal-body">
+                <div class="cert-info-table">
+                    <div class="cert-info-row">
+                        <span class="info-label"><i class="fas fa-calendar-alt"></i> Issue Date:</span>
+                        <span class="info-value" id="cert-modal-date">Month Year</span>
+                    </div>
+                    <div class="cert-info-row" id="cert-modal-id-row">
+                        <span class="info-label"><i class="fas fa-fingerprint"></i> Credential ID:</span>
+                        <div class="credential-id-wrap">
+                            <code class="info-value-code" id="cert-modal-id">ID-123456</code>
+                            <button id="copy-credential-btn" class="copy-btn" title="Copy Credential ID" onclick="copyCredentialId()">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cert-info-row">
+                        <span class="info-label"><i class="fas fa-check-circle"></i> Status:</span>
+                        <span class="info-value text-emerald"><i class="fas fa-badge-check"></i> Verified & Active</span>
+                    </div>
+                </div>
+
+                <div class="cert-skills-box">
+                    <h4><i class="fas fa-tags accent-text"></i> Verified Skills & Topics</h4>
+                    <div class="cert-skills-pills" id="cert-modal-skills"></div>
+                </div>
+
+                <div class="cert-modal-actions">
+                    <a href="#" id="cert-modal-link" target="_blank" class="btn-primary w-full justify-center">
+                        <span>Show Official Credential / Certificate</span> <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Download Verification Modal -->
+    <div id="resume-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-dialog resume-modal-dialog glass-card">
+            <button class="modal-close-btn" onclick="closeModal('resume-modal')" aria-label="Close modal">&times;</button>
+            <div class="resume-modal-content">
+                <div class="resume-icon-bubble"><i class="fas fa-file-pdf"></i></div>
+                <h3>Download Aditya's Resume</h3>
+                <p class="text-muted">Data Analyst & AI Enthusiast (PDF Format)</p>
+
+                <div class="verification-box">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="human-verify-resume">
+                        <span class="checkbox-box"></span>
+                        <span class="checkbox-label">Verify you are a human</span>
+                    </label>
+                </div>
+
+                <a href="Resume_Aditya.pdf" download="Aditya_Raj_Resume.pdf" id="resume-download-btn" class="btn-primary w-full justify-center disabled-btn">
+                    <span>Download PDF Resume</span> <i class="fas fa-download"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification for Copy ID / Actions -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+</body>
+
+</html>
